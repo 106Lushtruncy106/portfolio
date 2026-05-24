@@ -29,14 +29,6 @@ export const metadata: Metadata = {
   },
   description:
     "专业独立站搭建服务，不套模板、个性定制。企业展示站、外贸SOHO站、品牌官网。",
-  openGraph: {
-    title: "帮你搞网站 | 独立站搭建",
-    description:
-      "专业独立站搭建服务，不套模板、个性定制。",
-    type: "website",
-    locale: "zh_CN",
-    siteName: "帮你搞网站",
-  },
 };
 
 export default function RootLayout({
@@ -45,8 +37,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh-CN" className={`${inter.variable} ${notoSansSC.variable} ${jetbrainsMono.variable}`}>
-      <body className="min-h-screen bg-background text-foreground antialiased">
+    <html
+      lang="zh-CN"
+      style={{ background: "#ffffff" }}
+      className={`${inter.variable} ${notoSansSC.variable} ${jetbrainsMono.variable}`}
+    >
+      <body style={{ background: "#ffffff", color: "#111111" }}>
         <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
