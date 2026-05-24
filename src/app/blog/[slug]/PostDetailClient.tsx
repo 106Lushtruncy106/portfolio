@@ -12,43 +12,26 @@ import type { Post } from "@/types";
 const portableComponents = {
   types: {
     image: ({ value }: { value: any }) => (
-      <div className="relative my-8 h-96 rounded-xl overflow-hidden">
+      <div className="relative my-8 h-72 rounded-lg overflow-hidden bg-surface">
         <SanityImage image={value} alt={value.alt || ""} fill />
       </div>
     ),
   },
   block: {
-    h1: ({ children }: any) => (
-      <h1 className="text-3xl font-bold mt-10 mb-4">{children}</h1>
-    ),
-    h2: ({ children }: any) => (
-      <h2 className="text-2xl font-bold mt-8 mb-3">{children}</h2>
-    ),
-    h3: ({ children }: any) => (
-      <h3 className="text-xl font-semibold mt-6 mb-2">{children}</h3>
-    ),
-    normal: ({ children }: any) => (
-      <p className="text-text-muted leading-relaxed mb-4">{children}</p>
-    ),
+    h1: ({ children }: any) => <h1 className="text-2xl font-bold mt-8 mb-4">{children}</h1>,
+    h2: ({ children }: any) => <h2 className="text-xl font-bold mt-6 mb-3">{children}</h2>,
+    h3: ({ children }: any) => <h3 className="text-lg font-semibold mt-5 mb-2">{children}</h3>,
+    normal: ({ children }: any) => <p className="text-sm text-text-muted leading-relaxed mb-4">{children}</p>,
     blockquote: ({ children }: any) => (
-      <blockquote className="border-l-4 border-primary pl-4 my-6 italic text-text-muted">
-        {children}
-      </blockquote>
+      <blockquote className="border-l-2 border-foreground pl-4 my-6 text-sm text-text-muted italic">{children}</blockquote>
     ),
     code: ({ children }: any) => (
-      <code className="bg-surface-light px-2 py-0.5 rounded text-sm font-mono text-primary-light">
-        {children}
-      </code>
+      <code className="bg-surface px-1.5 py-0.5 rounded text-xs font-mono">{children}</code>
     ),
   },
   marks: {
     link: ({ children, value }: any) => (
-      <a
-        href={value.href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-primary-light hover:underline"
-      >
+      <a href={value.href} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:opacity-60 transition-opacity">
         {children}
       </a>
     ),
@@ -61,114 +44,63 @@ export default function PostDetailClient({ post }: { post: Post | null }) {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      const docHeight =
-        document.documentElement.scrollHeight - window.innerHeight;
-      const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-      setReadingProgress(Math.min(scrollPercent, 100));
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      setReadingProgress(docHeight > 0 ? Math.min((scrollTop / docHeight) * 100, 100) : 0);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   if (!post) {
     return (
-      <div className="pt-32 text-center">
-        <h1 className="text-3xl font-bold mb-4">文章未找到</h1>
-        <p className="text-text-muted mb-8">
-          你要查看的文章不存在。
-        </p>
-        <Link href="/blog">
-          <Button>返回博客</Button>
-        </Link>
+      <div className="max-w-5xl mx-auto px-6 pt-32 text-center">
+        <h1 className="text-2xl font-bold mb-4">文章未找到</h1>
+        <Link href="/blog"><Button variant="outline">返回博客</Button></Link>
       </div>
     );
   }
 
   return (
     <>
-      {/* Reading Progress Bar */}
-      <div className="fixed top-0 left-0 right-0 z-50 h-1 bg-white/5">
-        <div
-          className="h-full bg-gradient-to-r from-primary to-accent transition-all duration-150"
-          style={{ width: `${readingProgress}%` }}
-        />
+      <div className="fixed top-0 left-0 right-0 z-50 h-0.5 bg-surface">
+        <div className="h-full bg-foreground transition-all duration-150" style={{ width: `${readingProgress}%` }} />
       </div>
 
-      <div className="pt-24">
-        {/* Hero */}
-        <section className="py-16">
-          <div className="max-w-4xl mx-auto px-6">
-            <ScrollAnimator>
-              <div className="mb-8">
-                <Link
-                  href="/blog"
-                  className="text-sm text-text-muted hover:text-white transition-colors mb-4 inline-block"
-                >
-                  &larr; 返回博客
-                </Link>
-              </div>
-
-              <div className="flex items-center gap-3 mb-4">
-                {post.tags?.map((tag) => (
-                  <Badge key={tag._id}>{tag.name}</Badge>
-                ))}
-              </div>
-
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                {post.title}
-              </h1>
-
-              <div className="flex items-center gap-4 text-sm text-text-muted">
-                {post.publishedAt && (
-                  <time>
-                    {new Date(post.publishedAt).toLocaleDateString("zh-CN", {
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
-                    })}
-                  </time>
-                )}
-                {post.readingTime && <span>阅读 {post.readingTime} 分钟</span>}
-              </div>
-            </ScrollAnimator>
-
-            {post.coverImage && (
-              <ScrollAnimator delay={0.2}>
-                <div className="relative h-80 md:h-[500px] rounded-2xl overflow-hidden mt-8">
-                  <SanityImage
-                    image={post.coverImage}
-                    alt={post.title}
-                    fill
-                    priority
-                  />
-                </div>
-              </ScrollAnimator>
+      <div className="max-w-3xl mx-auto px-6 pt-20 pb-20">
+        <ScrollAnimator>
+          <Link href="/blog" className="text-xs text-text-dim hover:text-foreground transition-colors mb-6 block">
+            &larr; 返回博客
+          </Link>
+          <div className="flex items-center gap-2 mb-3">
+            {post.tags?.map((tag) => <Badge key={tag._id}>{tag.name}</Badge>)}
+          </div>
+          <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">{post.title}</h1>
+          <div className="flex items-center gap-3 text-xs text-text-dim">
+            {post.publishedAt && (
+              <time>{new Date(post.publishedAt).toLocaleDateString("zh-CN", {
+                year: "numeric", month: "long", day: "numeric",
+              })}</time>
             )}
+            {post.readingTime && <span>阅读 {post.readingTime} 分钟</span>}
           </div>
-        </section>
+        </ScrollAnimator>
 
-        {/* Content */}
-        <section className="pb-20">
-          <div className="max-w-3xl mx-auto px-6">
-            <ScrollAnimator>
-              <article className="prose-custom">
-                <PortableText
-                  value={post.body}
-                  components={portableComponents}
-                />
-              </article>
-            </ScrollAnimator>
+        {post.coverImage && (
+          <ScrollAnimator delay={0.1}>
+            <div className="relative h-64 md:h-80 rounded-lg overflow-hidden mt-8 mb-12 bg-surface">
+              <SanityImage image={post.coverImage} alt={post.title} fill priority />
+            </div>
+          </ScrollAnimator>
+        )}
 
-            <ScrollAnimator delay={0.3}>
-              <div className="mt-12 pt-8 border-t border-white/5">
-                <Link href="/blog">
-                  <Button variant="ghost">&larr; 返回博客</Button>
-                </Link>
-              </div>
-            </ScrollAnimator>
+        <ScrollAnimator>
+          <article>
+            <PortableText value={post.body} components={portableComponents} />
+          </article>
+          <div className="mt-12 pt-6 border-t border-border">
+            <Link href="/blog"><Button variant="ghost" size="sm">&larr; 返回博客</Button></Link>
           </div>
-        </section>
+        </ScrollAnimator>
       </div>
     </>
   );

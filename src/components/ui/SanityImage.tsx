@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import { urlFor } from "@/lib/sanity";
 
@@ -8,8 +6,6 @@ interface SanityImageProps {
   alt: string;
   className?: string;
   priority?: boolean;
-  width?: number;
-  height?: number;
   fill?: boolean;
 }
 
@@ -18,14 +14,11 @@ export default function SanityImage({
   alt,
   className = "",
   priority = false,
-  width,
-  height,
   fill = false,
 }: SanityImageProps) {
   if (!image) return null;
 
-  const builder = urlFor(image);
-  const imageUrl = fill ? builder.url() : builder.width(width || 800).url();
+  const imageUrl = urlFor(image).url();
 
   if (fill) {
     return (
@@ -43,8 +36,8 @@ export default function SanityImage({
     <Image
       src={imageUrl}
       alt={alt}
-      width={width || 800}
-      height={height || 600}
+      width={800}
+      height={600}
       className={className}
       priority={priority}
     />

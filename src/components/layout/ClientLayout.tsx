@@ -2,8 +2,6 @@
 
 import Header from "./Header";
 import Footer from "./Footer";
-import CustomCursor from "@/components/animations/CustomCursor";
-import PageTransition from "@/components/animations/PageTransition";
 import { usePathname } from "next/navigation";
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
@@ -16,11 +14,8 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
 
   return (
     <>
-      <CustomCursor />
       <Header />
-      <main className="flex-1">
-        <PageTransition>{children}</PageTransition>
-      </main>
+      <main>{children}</main>
       <Footer />
     </>
   );

@@ -5,7 +5,7 @@ import CasesClient from "./CasesClient";
 
 export const metadata: Metadata = {
   title: "案例",
-  description: "看看我做过的一些独立站项目，每个都是定制开发。",
+  description: "看看我做过的一些独立站项目。",
 };
 
 async function getCases() {
@@ -19,6 +19,5 @@ async function getCases() {
 
 export default async function CasesPage() {
   const cases = await getCases();
-
   return <CasesClient cases={cases} />;
 }
