@@ -41,14 +41,14 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="max-w-5xl mx-auto px-6 pt-24 pb-20 md:pt-32 md:pb-28">
-        <div className="max-w-2xl">
+      <section className="max-w-5xl mx-auto px-6 pt-32 pb-24 md:pt-40 md:pb-32">
+        <div className="flex flex-col items-center text-center">
           <ScrollAnimator>
-            <Badge className="mb-6">独立站搭建 - 不套模板，个性定制</Badge>
+            <Badge className="mb-8">独立站搭建 - 不套模板，个性定制</Badge>
           </ScrollAnimator>
 
           <ScrollAnimator delay={0.15}>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight">
               让每个网站都<br />
               与众不同
             </h1>
@@ -62,12 +62,12 @@ export default function HomePage() {
           </ScrollAnimator>
 
           <ScrollAnimator delay={0.45}>
-            <div className="mt-8 flex items-center gap-3">
+            <div className="mt-10 flex items-center gap-4">
               <Link href="/cases">
-                <Button>看案例</Button>
+                <Button size="lg">看案例</Button>
               </Link>
               <Link href="/contact">
-                <Button variant="outline">找我聊聊</Button>
+                <Button variant="outline" size="lg">找我聊聊</Button>
               </Link>
             </div>
           </ScrollAnimator>
