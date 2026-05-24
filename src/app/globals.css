@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+/* ===== Custom theme tokens =====
+   These enable classes like: text-foreground, bg-surface, border-border, etc.
+   Tailwind v4 auto-generates utilities from @theme tokens. */
+@theme {
+  --color-foreground: #111111;
+  --color-background: #ffffff;
+  --color-surface: #f5f5f5;
+  --color-border: #e5e5e5;
+  --color-text-muted: #666666;
+  --color-text-dim: #999999;
+}
+
 /* Force white background - override any dark mode */
 html {
   background: #ffffff !important;
