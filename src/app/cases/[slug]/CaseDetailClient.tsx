@@ -16,12 +16,12 @@ export default function CaseDetailClient({
   if (!caseStudy) {
     return (
       <div className="pt-32 text-center">
-        <h1 className="text-3xl font-bold mb-4">Case Study Not Found</h1>
+        <h1 className="text-3xl font-bold mb-4">案例未找到</h1>
         <p className="text-text-muted mb-8">
-          The case study you&apos;re looking for doesn&apos;t exist.
+          你要查看的案例不存在。
         </p>
         <Link href="/cases">
-          <Button>Back to Cases</Button>
+          <Button>返回案例</Button>
         </Link>
       </div>
     );
@@ -57,7 +57,7 @@ export default function CaseDetailClient({
             </h1>
             {caseStudy.client && (
               <p className="mt-2 text-lg text-text-muted">
-                Client: {caseStudy.client}
+                客户：{caseStudy.client}
               </p>
             )}
           </ScrollAnimator>
@@ -69,7 +69,7 @@ export default function CaseDetailClient({
         <div className="max-w-5xl mx-auto px-6">
           <ScrollAnimator>
             <div className="mb-12">
-              <h2 className="text-2xl font-bold mb-4">Overview</h2>
+              <h2 className="text-2xl font-bold mb-4">项目概览</h2>
               <p className="text-text-muted leading-relaxed">
                 {caseStudy.overview}
               </p>
@@ -81,7 +81,7 @@ export default function CaseDetailClient({
               <ScrollAnimator>
                 <Card className="p-6 h-full">
                   <h3 className="text-lg font-semibold mb-3 text-primary-light">
-                    The Challenge
+                    挑战
                   </h3>
                   <p className="text-text-muted leading-relaxed">
                     {caseStudy.challenge}
@@ -93,7 +93,7 @@ export default function CaseDetailClient({
               <ScrollAnimator delay={0.1}>
                 <Card className="p-6 h-full">
                   <h3 className="text-lg font-semibold mb-3 text-accent-light">
-                    The Solution
+                    解决方案
                   </h3>
                   <p className="text-text-muted leading-relaxed">
                     {caseStudy.solution}
@@ -109,7 +109,7 @@ export default function CaseDetailClient({
               {caseStudy.techStack && caseStudy.techStack.length > 0 && (
                 <div>
                   <h3 className="text-sm font-semibold uppercase tracking-wider text-text-muted mb-3">
-                    Tech Stack
+                    技术栈
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {caseStudy.techStack.map((tech) => (
@@ -123,7 +123,7 @@ export default function CaseDetailClient({
               {caseStudy.services && caseStudy.services.length > 0 && (
                 <div>
                   <h3 className="text-sm font-semibold uppercase tracking-wider text-text-muted mb-3">
-                    Services
+                    服务内容
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {caseStudy.services.map((service) => (
@@ -141,7 +141,7 @@ export default function CaseDetailClient({
           {caseStudy.results && caseStudy.results.length > 0 && (
             <ScrollAnimator>
               <div className="mb-12">
-                <h2 className="text-2xl font-bold mb-6">Results</h2>
+                <h2 className="text-2xl font-bold mb-6">成果</h2>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   {caseStudy.results.map((result) => (
                     <Card key={result.metric} className="p-5 text-center">
@@ -162,7 +162,7 @@ export default function CaseDetailClient({
           {caseStudy.images && caseStudy.images.length > 0 && (
             <ScrollAnimator>
               <div className="mb-12">
-                <h2 className="text-2xl font-bold mb-6">Gallery</h2>
+                <h2 className="text-2xl font-bold mb-6">项目展示</h2>
                 <div className="grid md:grid-cols-2 gap-4">
                   {caseStudy.images.map((image, i) => (
                     <div
@@ -171,7 +171,7 @@ export default function CaseDetailClient({
                     >
                       <SanityImage
                         image={image}
-                        alt={`${caseStudy.title} screenshot ${i + 1}`}
+                        alt={`${caseStudy.title} 截图 ${i + 1}`}
                         fill
                       />
                     </div>
@@ -209,7 +209,7 @@ export default function CaseDetailClient({
           <ScrollAnimator>
             <div className="flex items-center justify-between pt-8 border-t border-white/5">
               <Link href="/cases">
-                <Button variant="ghost">&larr; Back to Cases</Button>
+                <Button variant="ghost">&larr; 返回案例</Button>
               </Link>
               <div className="flex gap-3">
                 {caseStudy.liveUrl && (
@@ -218,11 +218,11 @@ export default function CaseDetailClient({
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Button variant="outline">Visit Live Site</Button>
+                    <Button variant="outline">访问网站</Button>
                   </a>
                 )}
                 <Link href="/contact">
-                  <Button>Start Your Project</Button>
+                  <Button>开始你的项目</Button>
                 </Link>
               </div>
             </div>

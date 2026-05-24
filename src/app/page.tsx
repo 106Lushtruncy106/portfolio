@@ -13,32 +13,32 @@ const Hero3D = dynamic(() => import("@/components/animations/Hero3D"), { ssr: fa
 
 const services = [
   {
-    title: "Custom Web Development",
-    description: "Tailor-made websites built from scratch with modern frameworks like Next.js and React.",
+    title: "企业展示网站",
+    description: "从零开始手写代码，打造专业的企业官网。不套模板、不敷衍，每个像素都为你的品牌服务。",
     tech: ["Next.js", "React", "TypeScript"],
   },
   {
-    title: "E-commerce Solutions",
-    description: "Full-featured online stores with secure payments, inventory management, and beautiful UX.",
-    tech: ["Shopify", "Next.js", "Stripe"],
-  },
-  {
-    title: "Business Websites",
-    description: "Professional corporate sites, landing pages, and brand showcases that convert visitors.",
+    title: "外贸SOHO建站",
+    description: "专为外贸SOHO打造的独立站，海外访问速度快、SEO优化到位，帮你把产品卖到全球。",
     tech: ["Next.js", "Sanity CMS", "Tailwind"],
   },
   {
-    title: "Brand Identity",
-    description: "Complete brand packages including logo design, color systems, typography, and style guides.",
-    tech: ["Figma", "Design Systems", "UI/UX"],
+    title: "品牌官网定制",
+    description: "从品牌定位出发，设计+开发一体服务。独特的视觉风格，让你的品牌一眼被记住。",
+    tech: ["Figma", "Next.js", "UI/UX"],
+  },
+  {
+    title: "WordPress开发",
+    description: "需要WordPress也没问题。手写前端+WP后端，灵活高效，满足复杂业务需求。",
+    tech: ["WordPress", "PHP", "手写前端"],
   },
 ];
 
 const stats = [
-  { label: "Projects Delivered", value: 50 },
-  { label: "Happy Clients", value: 35 },
-  { label: "Years Experience", value: 5 },
-  { label: "Tech Stack Mastered", value: 15 },
+  { label: "完成项目", value: 50 },
+  { label: "服务客户", value: 35 },
+  { label: "行业经验", value: 5 },
+  { label: "掌握技术", value: 15 },
 ];
 
 export default function HomePage() {
@@ -56,7 +56,7 @@ export default function HomePage() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <Badge variant="primary" className="mb-6">
-              Independent Web Developer
+              独立站搭建 - 不套模板，个性定制
             </Badge>
           </motion.div>
 
@@ -66,10 +66,8 @@ export default function HomePage() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight"
           >
-            I Build{" "}
-            <span className="gradient-text animate-glow">Exceptional</span>
-            <br />
-            Websites That Stand Out
+            让每个网站都{" "}
+            <span className="gradient-text animate-glow">与众不同</span>
           </motion.h1>
 
           <motion.p
@@ -78,8 +76,8 @@ export default function HomePage() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="mt-6 text-lg md:text-xl text-text-muted max-w-2xl mx-auto"
           >
-            No templates. No shortcuts. Just unique, hand-crafted websites
-            that tell your story and drive results.
+            不套模板、不敷衍。每个网站都是手写代码、量身定制，
+            让你的品牌在网上一眼被认出来。
           </motion.p>
 
           <motion.div
@@ -89,11 +87,11 @@ export default function HomePage() {
             className="mt-10 flex items-center justify-center gap-4"
           >
             <Link href="/cases">
-              <Button size="lg">View My Work</Button>
+              <Button size="lg">看案例</Button>
             </Link>
             <Link href="/contact">
               <Button variant="outline" size="lg">
-                Let&apos;s Talk
+                找我聊聊
               </Button>
             </Link>
           </motion.div>
@@ -142,14 +140,13 @@ export default function HomePage() {
           <ScrollAnimator>
             <div className="text-center mb-16">
               <Badge variant="accent" className="mb-4">
-                What I Do
+                我能做什么
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold">
-                Services I Offer
+                服务项目
               </h2>
               <p className="mt-4 text-text-muted max-w-xl mx-auto">
-                From concept to launch, I provide end-to-end web development
-                services tailored to your needs.
+                从需求沟通到上线部署，提供全流程的独立站搭建服务。
               </p>
             </div>
           </ScrollAnimator>
@@ -176,7 +173,7 @@ export default function HomePage() {
             <div className="text-center mt-12">
               <Link href="/services">
                 <Button variant="outline" size="lg">
-                  View All Services
+                  查看全部服务
                 </Button>
               </Link>
             </div>
@@ -190,15 +187,15 @@ export default function HomePage() {
         <ScrollAnimator>
           <div className="relative max-w-3xl mx-auto px-6 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Ready to Build Something{" "}
-              <span className="gradient-text">Amazing</span>?
+              准备好做一个{" "}
+              <span className="gradient-text">不一样的网站</span>了吗？
             </h2>
             <p className="text-lg text-text-muted mb-8">
-              Let&apos;s discuss your project and create a website that sets
-              you apart from the competition.
+              不套模板、不敷衍。找我聊聊你的项目，让我帮你打造一个
+              真正能拿得出手的独立站。
             </p>
             <Link href="/contact">
-              <Button size="lg">Get in Touch</Button>
+              <Button size="lg">联系我</Button>
             </Link>
           </div>
         </ScrollAnimator>

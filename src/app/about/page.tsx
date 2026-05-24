@@ -1,31 +1,30 @@
 import type { Metadata } from "next";
 import ScrollAnimator from "@/components/animations/ScrollAnimator";
 import Badge from "@/components/ui/Badge";
-import Button from "@/components/ui/Button";
 import Card from "@/components/ui/Card";
 import CountUp from "@/components/ui/CountUp";
 
 export const metadata: Metadata = {
-  title: "About",
-  description: "Learn about my journey as an independent web developer.",
+  title: "关于",
+  description: "了解我的独立站搭建故事和服务理念。",
 };
 
 const timeline = [
-  { year: "2020", event: "Started freelancing as a web developer" },
-  { year: "2021", event: "First major client project launched" },
-  { year: "2022", event: "Expanded to full-stack development with Next.js" },
-  { year: "2023", event: "Delivered 20+ websites for global clients" },
-  { year: "2024", event: "Specialized in custom, template-free builds" },
-  { year: "2025", event: "Mastered modern stack: Next.js, Three.js, Sanity CMS" },
+  { year: "2020", event: "开始接单做网站开发" },
+  { year: "2021", event: "完成第一个大型企业站项目" },
+  { year: "2022", event: "全面转向Next.js全栈开发" },
+  { year: "2023", event: "为20+国内外客户完成网站搭建" },
+  { year: "2024", event: "确立「不套模板、个性定制」的服务理念" },
+  { year: "2025", event: "掌握Next.js + Three.js + Sanity CMS 现代技术栈" },
 ];
 
 const skills = [
   { name: "Next.js / React", level: 95 },
   { name: "TypeScript", level: 90 },
   { name: "Tailwind CSS", level: 95 },
-  { name: "Three.js / 3D", level: 75 },
-  { name: "Sanity CMS", level: 85 },
-  { name: "UI/UX Design", level: 80 },
+  { name: "Three.js / 3D效果", level: 75 },
+  { name: "Sanity CMS / WordPress", level: 85 },
+  { name: "UI/UX 设计", level: 80 },
 ];
 
 export default function AboutPage() {
@@ -38,22 +37,22 @@ export default function AboutPage() {
             <ScrollAnimator>
               <div>
                 <Badge variant="accent" className="mb-4">
-                  About Me
+                  关于我
                 </Badge>
                 <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                  Turning Ideas Into{" "}
-                  <span className="gradient-text">Digital Reality</span>
+                  把想法变成{" "}
+                  <span className="gradient-text">能赚钱的网站</span>
                 </h1>
                 <p className="text-lg text-text-muted mb-6">
-                  I&apos;m an independent web developer with a passion for
-                  creating unique, custom-built websites that help businesses
-                  stand out. My philosophy is simple: no templates, no
-                  shortcuts — just exceptional craftsmanship.
+                  我是帮你搞网站的独立站搭建师。我的理念很简单：
+                  不套模板、不敷衍，每个网站都是独一无二的。
+                  没有千篇一律的页面，只有为你量身定制的代码。
                 </p>
                 <p className="text-text-muted mb-8">
-                  Over the past 5 years, I&apos;ve helped 35+ clients across
-                  various industries establish their online presence with
-                  websites that are as functional as they are beautiful.
+                  5年来，我为30+客户搭建了他们的独立站，
+                  涵盖企业展示、外贸SOHO、品牌官网等各种类型。
+                  我深信，一个真正定制化的网站，比任何模板都能更好地
+                  传递品牌价值。
                 </p>
               </div>
             </ScrollAnimator>
@@ -61,10 +60,10 @@ export default function AboutPage() {
             <ScrollAnimator direction="right">
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { label: "Projects", value: 50 },
-                  { label: "Clients", value: 35 },
-                  { label: "Years", value: 5 },
-                  { label: "Countries", value: 8 },
+                  { label: "完成项目", value: 50 },
+                  { label: "服务客户", value: 35 },
+                  { label: "行业经验", value: 5 },
+                  { label: "技术栈", value: 15 },
                 ].map((stat) => (
                   <Card key={stat.label} className="p-6 text-center">
                     <CountUp
@@ -88,7 +87,7 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto px-6">
           <ScrollAnimator>
             <h2 className="text-3xl font-bold text-center mb-16">
-              My Journey
+              我的成长历程
             </h2>
           </ScrollAnimator>
 
@@ -151,7 +150,7 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto px-6">
           <ScrollAnimator>
             <h2 className="text-3xl font-bold text-center mb-16">
-              Technical Skills
+              技术能力
             </h2>
           </ScrollAnimator>
 

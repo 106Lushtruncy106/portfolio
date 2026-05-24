@@ -4,8 +4,8 @@ import { postsQuery } from "@/lib/queries";
 import BlogClient from "./BlogClient";
 
 export const metadata: Metadata = {
-  title: "Blog",
-  description: "Thoughts on web development, design, and technology.",
+  title: "博客",
+  description: "关于建站、技术、设计的思考和分享。",
 };
 
 async function getPosts() {

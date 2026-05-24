@@ -1,5 +1,4 @@
 import { getClient } from "@/lib/sanity";
-import { featuredCasesQuery } from "@/lib/queries";
 
 export const dynamic = "force-dynamic";
 
@@ -8,7 +7,6 @@ export async function GET() {
 
   let posts: any[] = [];
   try {
-    // Try to fetch posts from Sanity for the RSS feed
     // posts = await getClient().fetch(postsQuery);
   } catch {
     // Ignore errors during RSS generation
@@ -29,9 +27,9 @@ export async function GET() {
   const rss = `<?xml version="1.0" encoding="UTF-8"?>
   <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-      <title>Portfolio Blog</title>
+      <title>帮你搞网站 - 博客</title>
       <link>${baseUrl}</link>
-      <description>Thoughts on web development, design, and technology.</description>
+      <description>独立站搭建、Web开发、设计实践的经验分享。</description>
       <atom:link href="${baseUrl}/rss.xml" rel="self" type="application/rss+xml"/>
       ${items}
     </channel>

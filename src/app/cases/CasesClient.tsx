@@ -9,13 +9,13 @@ import Card from "@/components/ui/Card";
 import SanityImage from "@/components/ui/SanityImage";
 import type { CaseStudy } from "@/types";
 
-const industries = ["All", "E-commerce", "Tech", "Business", "Creative"];
+const industries = ["全部", "电商", "科技", "企业", "创意"];
 
 export default function CasesClient({ cases }: { cases: CaseStudy[] }) {
-  const [activeFilter, setActiveFilter] = useState("All");
+  const [activeFilter, setActiveFilter] = useState("全部");
 
   const filteredCases =
-    activeFilter === "All"
+    activeFilter === "全部"
       ? cases
       : cases.filter((c) => c.industry === activeFilter);
 
@@ -26,14 +26,13 @@ export default function CasesClient({ cases }: { cases: CaseStudy[] }) {
           <ScrollAnimator>
             <div className="text-center mb-16">
               <Badge variant="primary" className="mb-4">
-                Portfolio
+                作品集
               </Badge>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                My Work
+                我的案例
               </h1>
               <p className="text-lg text-text-muted max-w-2xl mx-auto">
-                Every project is a unique story. Browse through my case studies
-                to see how I bring ideas to life.
+                每个项目都是独一无二的。来看看我如何把想法变成真正的网站。
               </p>
             </div>
           </ScrollAnimator>
@@ -91,7 +90,7 @@ export default function CasesClient({ cases }: { cases: CaseStudy[] }) {
                           variant="accent"
                           className="absolute top-3 right-3"
                         >
-                          Featured
+                          精选
                         </Badge>
                       )}
                     </div>
@@ -137,11 +136,11 @@ export default function CasesClient({ cases }: { cases: CaseStudy[] }) {
           {filteredCases.length === 0 && (
             <div className="text-center py-20">
               <p className="text-text-muted">
-                No cases found. Check back soon or{" "}
+                暂无案例。可以{" "}
                 <Link href="/contact" className="text-primary hover:underline">
-                  get in touch
+                  联系我
                 </Link>{" "}
-                to be the first!
+                成为第一个案例的主人！
               </p>
             </div>
           )}

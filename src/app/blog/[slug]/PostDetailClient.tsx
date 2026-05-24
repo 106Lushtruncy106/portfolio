@@ -6,7 +6,6 @@ import { PortableText } from "@portabletext/react";
 import ScrollAnimator from "@/components/animations/ScrollAnimator";
 import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
-import Card from "@/components/ui/Card";
 import SanityImage from "@/components/ui/SanityImage";
 import type { Post } from "@/types";
 
@@ -75,12 +74,12 @@ export default function PostDetailClient({ post }: { post: Post | null }) {
   if (!post) {
     return (
       <div className="pt-32 text-center">
-        <h1 className="text-3xl font-bold mb-4">Post Not Found</h1>
+        <h1 className="text-3xl font-bold mb-4">文章未找到</h1>
         <p className="text-text-muted mb-8">
-          The article you&apos;re looking for doesn&apos;t exist.
+          你要查看的文章不存在。
         </p>
         <Link href="/blog">
-          <Button>Back to Blog</Button>
+          <Button>返回博客</Button>
         </Link>
       </div>
     );
@@ -106,7 +105,7 @@ export default function PostDetailClient({ post }: { post: Post | null }) {
                   href="/blog"
                   className="text-sm text-text-muted hover:text-white transition-colors mb-4 inline-block"
                 >
-                  &larr; Back to Blog
+                  &larr; 返回博客
                 </Link>
               </div>
 
@@ -123,14 +122,14 @@ export default function PostDetailClient({ post }: { post: Post | null }) {
               <div className="flex items-center gap-4 text-sm text-text-muted">
                 {post.publishedAt && (
                   <time>
-                    {new Date(post.publishedAt).toLocaleDateString("en-US", {
+                    {new Date(post.publishedAt).toLocaleDateString("zh-CN", {
                       year: "numeric",
                       month: "long",
                       day: "numeric",
                     })}
                   </time>
                 )}
-                {post.readingTime && <span>{post.readingTime} min read</span>}
+                {post.readingTime && <span>阅读 {post.readingTime} 分钟</span>}
               </div>
             </ScrollAnimator>
 
@@ -164,7 +163,7 @@ export default function PostDetailClient({ post }: { post: Post | null }) {
             <ScrollAnimator delay={0.3}>
               <div className="mt-12 pt-8 border-t border-white/5">
                 <Link href="/blog">
-                  <Button variant="ghost">&larr; Back to Blog</Button>
+                  <Button variant="ghost">&larr; 返回博客</Button>
                 </Link>
               </div>
             </ScrollAnimator>

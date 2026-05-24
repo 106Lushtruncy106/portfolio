@@ -19,33 +19,34 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://example.com"),
   title: {
-    default: "Portfolio | Independent Web Developer",
-    template: "%s | Portfolio",
+    default: "帮你搞网站 | 独立站搭建 - 不套模板，个性定制",
+    template: "%s | 帮你搞网站",
   },
   description:
-    "Custom website development services. No templates, unique designs tailored to your brand.",
+    "专业独立站搭建服务，不套模板、个性定制。企业展示站、外贸SOHO站、品牌官网，从0到1手写代码，让你的网站与众不同。",
   keywords: [
-    "web development",
-    "custom website",
-    "portfolio",
-    "independent developer",
-    "Next.js developer",
-    "freelance",
-    "web design",
+    "独立站搭建",
+    "外贸网站建设",
+    "企业官网定制",
+    "不套模板",
+    "网站开发",
+    "SOHO建站",
+    "WordPress开发",
+    "前端开发",
   ],
   openGraph: {
-    title: "Portfolio | Independent Web Developer",
+    title: "帮你搞网站 | 独立站搭建 - 不套模板，个性定制",
     description:
-      "Custom website development services. No templates, unique designs tailored to your brand.",
+      "专业独立站搭建服务，不套模板、个性定制。企业展示站、外贸SOHO站、品牌官网，从0到1手写代码。",
     type: "website",
-    locale: "en_US",
-    siteName: "Portfolio",
+    locale: "zh_CN",
+    siteName: "帮你搞网站",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Portfolio | Independent Web Developer",
+    title: "帮你搞网站 | 独立站搭建",
     description:
-      "Custom website development services. No templates, unique designs tailored to your brand.",
+      "专业独立站搭建服务，不套模板、个性定制。企业展示站、外贸SOHO站、品牌官网。",
   },
   robots: {
     index: true,
@@ -64,7 +65,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable} dark`}>
+    <html lang="zh-CN" className={`${inter.variable} ${jetbrainsMono.variable} dark`}>
       <body className="min-h-screen bg-background text-foreground antialiased noise-bg">
         <JsonLd />
         <ClientLayout>{children}</ClientLayout>

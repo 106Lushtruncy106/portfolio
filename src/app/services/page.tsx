@@ -6,94 +6,94 @@ import Button from "@/components/ui/Button";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "服务",
   description:
-    "Professional web development services including custom builds, e-commerce, and brand identity.",
+    "独立站搭建服务：企业展示站、外贸SOHO站、品牌官网定制、WordPress开发。不套模板，个性定制。",
 };
 
 const servicesData = [
   {
-    title: "Custom Web Development",
-    subtitle: "From Scratch, Built to Last",
+    title: "企业展示网站",
+    subtitle: "从零手写，专业定制",
     description:
-      "Every website I build is hand-crafted from the ground up using modern technologies like Next.js, React, and TypeScript. No page builders, no pre-made templates — just clean, performant code tailored to your specific needs.",
+      "每个企业站都是手写代码、量身定制。不用Page Builder、不用模板，从设计到开发全部原创。让你的企业在网上展现出最专业的一面。",
     features: [
-      "Custom design and development",
-      "Responsive & mobile-first",
-      "SEO-optimized architecture",
-      "Performance optimized (90+ Lighthouse)",
-      "CMS integration (Sanity, WordPress)",
-      "Ongoing support & maintenance",
+      "原创设计 + 手写前端代码",
+      "响应式适配（PC/平板/手机）",
+      "SEO搜索引擎优化",
+      "性能优化（Lighthouse 90+）",
+      "CMS内容管理系统",
+      "上线后技术支持",
     ],
-    price: "Starts from $1,500",
+    price: "¥3,800起",
   },
   {
-    title: "E-Commerce Solutions",
-    subtitle: "Sell Smarter, Not Harder",
+    title: "外贸SOHO建站",
+    subtitle: "面向全球，转化优先",
     description:
-      "Launch a professional online store with seamless shopping experiences. I build e-commerce platforms that are fast, secure, and conversion-optimized.",
+      "专为外贸SOHO打造的独立站。海外CDN加速、多语言支持、搜索引擎友好，帮你把产品展示给全球买家，获得更多询盘。",
     features: [
-      "Custom storefront design",
-      "Secure payment integration",
-      "Inventory management",
-      "Mobile optimized checkout",
-      "SEO for product pages",
-      "Analytics & reporting",
+      "海外访问速度优化",
+      "多语言支持",
+      "产品展示系统",
+      "询盘表单 + WhatsApp集成",
+      "Google Analytics接入",
+      "SEO基础优化",
     ],
-    price: "Starts from $3,000",
+    price: "¥5,800起",
   },
   {
-    title: "Business & Corporate Sites",
-    subtitle: "Professional Presence, Made Simple",
+    title: "品牌官网定制",
+    subtitle: "一眼记住，与众不同",
     description:
-      "Showcase your business with a website that reflects your brand values. Perfect for startups, SMBs, and established companies looking to upgrade their online presence.",
+      "从品牌定位出发，定制独特的视觉风格和交互体验。适合想要打造品牌形象的公司和个人品牌。",
     features: [
-      "Brand-aligned design",
-      "Multi-page structure",
-      "Contact forms & integrations",
-      "Blog / news section",
-      "Google Maps & business info",
-      "Fast loading & reliable hosting",
+      "品牌视觉设计",
+      "定制交互动效",
+      "多页面结构",
+      "博客/新闻系统",
+      "联系表单集成",
+      "品牌色系统 + 规范",
     ],
-    price: "Starts from $1,000",
+    price: "¥6,800起",
   },
   {
-    title: "Brand Identity & Design",
-    subtitle: "Look the Part",
+    title: "WordPress建站",
+    subtitle: "灵活高效，业务为王",
     description:
-      "A great website deserves great branding. I help you define or refine your visual identity with cohesive design systems that work across all platforms.",
+      "如果你需要WordPress，我也能搞定。手写前端 + WP后台，既有定制化的前端体验，又有灵活的内容管理。",
     features: [
-      "Logo design & variations",
-      "Color palette & typography",
-      "Style guide documentation",
-      "Social media assets",
-      "Business card & stationery",
-      "Brand guidelines",
+      "手写前端主题开发",
+      "WP后台定制",
+      "WooCommerce电商",
+      "插件集成",
+      "速度优化",
+      "安全加固",
     ],
-    price: "Starts from $800",
+    price: "¥2,800起",
   },
 ];
 
 const process = [
   {
     step: "01",
-    title: "Discovery",
-    description: "We discuss your goals, target audience, and vision for the project.",
+    title: "需求沟通",
+    description: "了解你的业务、目标客户和设计偏好。",
   },
   {
     step: "02",
-    title: "Design",
-    description: "I create wireframes and visual designs for your approval.",
+    title: "方案设计",
+    description: "出设计稿和页面结构，确认后再开发。",
   },
   {
     step: "03",
-    title: "Development",
-    description: "I build your website with clean code and modern technologies.",
+    title: "开发搭建",
+    description: "手写代码搭建网站，随时沟通进度。",
   },
   {
     step: "04",
-    title: "Launch",
-    description: "We test, deploy, and make your site live for the world to see.",
+    title: "上线交付",
+    description: "测试无误后上线部署，交付使用。",
   },
 ];
 
@@ -105,15 +105,14 @@ export default function ServicesPage() {
         <div className="max-w-4xl mx-auto px-6 text-center">
           <ScrollAnimator>
             <Badge variant="accent" className="mb-4">
-              Services
+              服务
             </Badge>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              What I Can Do For You
+              我能帮你做什么
             </h1>
             <p className="text-lg text-text-muted max-w-2xl mx-auto">
-              From concept to launch, I provide end-to-end web development
-              services. Every project is custom-built — no templates, no
-              shortcuts.
+              从企业展示到外贸SOHO，从品牌官网到WordPress，
+              每个项目都是定制开发——不套模板、没有 shortcuts。
             </p>
           </ScrollAnimator>
         </div>
@@ -154,7 +153,7 @@ export default function ServicesPage() {
                   <div className="pt-6 border-t border-white/5 flex items-center justify-between">
                     <span className="text-sm text-text-muted">{service.price}</span>
                     <Link href="/contact">
-                      <Button size="sm">Get Started</Button>
+                      <Button size="sm">立即咨询</Button>
                     </Link>
                   </div>
                 </Card>
@@ -169,11 +168,10 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-6">
           <ScrollAnimator>
             <div className="text-center mb-16">
-              <Badge className="mb-4">How It Works</Badge>
-              <h2 className="text-3xl font-bold">My Process</h2>
+              <Badge className="mb-4">合作流程</Badge>
+              <h2 className="text-3xl font-bold">我的工作方式</h2>
               <p className="mt-4 text-text-muted max-w-xl mx-auto">
-                A streamlined approach to bringing your project from idea to
-                launch.
+                简单四步，从想法到上线。
               </p>
             </div>
           </ScrollAnimator>

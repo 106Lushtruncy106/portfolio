@@ -9,24 +9,24 @@ import Card from "@/components/ui/Card";
 
 const socialLinks = [
   {
-    name: "Email",
-    href: "mailto:hello@example.com",
-    description: "hello@example.com",
+    name: "抖音",
+    href: "#",
+    description: "关注我的抖音，看建站日常和技术分享",
   },
   {
-    name: "GitHub",
+    name: "小红书",
     href: "#",
-    description: "See my open source contributions",
+    description: "在小红书上找我，私信咨询",
   },
   {
-    name: "LinkedIn",
+    name: "闲鱼",
     href: "#",
-    description: "Connect professionally",
+    description: "闲鱼下单，安全有保障",
   },
   {
-    name: "Twitter",
+    name: "微信",
     href: "#",
-    description: "Follow for dev insights",
+    description: "添加微信，一对一沟通需求",
   },
 ];
 
@@ -40,7 +40,6 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real app, send to an API endpoint
     setSubmitted(true);
   };
 
@@ -53,16 +52,15 @@ export default function ContactPage() {
             <ScrollAnimator>
               <div>
                 <Badge variant="accent" className="mb-4">
-                  Get in Touch
+                  联系我
                 </Badge>
                 <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                  Let&apos;s Work{" "}
-                  <span className="gradient-text">Together</span>
+                  聊聊你的{" "}
+                  <span className="gradient-text">项目</span>
                 </h1>
                 <p className="text-lg text-text-muted mb-8">
-                  Have a project in mind? I&apos;d love to hear about it. Fill
-                  out the form or reach out directly — I typically respond
-                  within 24 hours.
+                  有建站需求？不管是企业站、外贸站还是个人品牌，
+                  都欢迎找我聊聊。通常在24小时内回复。
                 </p>
 
                 <div className="space-y-4">
@@ -130,11 +128,10 @@ export default function ContactPage() {
                       </svg>
                     </div>
                     <h3 className="text-2xl font-bold mb-2">
-                      Message Sent!
+                      消息已发送！
                     </h3>
                     <p className="text-text-muted">
-                      Thank you for reaching out. I&apos;ll get back to you
-                      within 24 hours.
+                      感谢你的联系，我会在24小时内回复你。
                     </p>
                     <Button
                       variant="outline"
@@ -144,7 +141,7 @@ export default function ContactPage() {
                         setFormState({ name: "", email: "", message: "" });
                       }}
                     >
-                      Send Another Message
+                      再发一条
                     </Button>
                   </motion.div>
                 ) : (
@@ -154,7 +151,7 @@ export default function ContactPage() {
                         htmlFor="name"
                         className="block text-sm font-medium mb-2"
                       >
-                        Name
+                        称呼
                       </label>
                       <input
                         id="name"
@@ -168,7 +165,7 @@ export default function ContactPage() {
                           })
                         }
                         className="w-full px-4 py-3 bg-surface-light border border-border rounded-lg text-white placeholder-text-dim focus:outline-none focus:border-primary transition-colors"
-                        placeholder="Your name"
+                        placeholder="你的名字"
                       />
                     </div>
                     <div>
@@ -176,7 +173,7 @@ export default function ContactPage() {
                         htmlFor="email"
                         className="block text-sm font-medium mb-2"
                       >
-                        Email
+                        邮箱
                       </label>
                       <input
                         id="email"
@@ -198,7 +195,7 @@ export default function ContactPage() {
                         htmlFor="message"
                         className="block text-sm font-medium mb-2"
                       >
-                        Message
+                        需求描述
                       </label>
                       <textarea
                         id="message"
@@ -212,11 +209,11 @@ export default function ContactPage() {
                           })
                         }
                         className="w-full px-4 py-3 bg-surface-light border border-border rounded-lg text-white placeholder-text-dim focus:outline-none focus:border-primary transition-colors resize-none"
-                        placeholder="Tell me about your project..."
+                        placeholder="告诉我你的项目想法..."
                       />
                     </div>
                     <Button type="submit" size="lg" className="w-full">
-                      Send Message
+                      发送消息
                     </Button>
                   </form>
                 )}

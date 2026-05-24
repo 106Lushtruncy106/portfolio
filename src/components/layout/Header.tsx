@@ -7,12 +7,12 @@ import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  { href: "/cases", label: "Cases" },
-  { href: "/services", label: "Services" },
-  { href: "/blog", label: "Blog" },
-  { href: "/contact", label: "Contact" },
+  { href: "/", label: "首页" },
+  { href: "/about", label: "关于" },
+  { href: "/cases", label: "案例" },
+  { href: "/services", label: "服务" },
+  { href: "/blog", label: "博客" },
+  { href: "/contact", label: "联系" },
 ];
 
 export default function Header() {
@@ -45,7 +45,7 @@ export default function Header() {
       >
         <nav className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link href="/" className="relative group">
-            <span className="text-xl font-bold gradient-text">Portfolio</span>
+            <span className="text-xl font-bold gradient-text">帮你搞网站</span>
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 group-hover:w-full" />
           </Link>
 

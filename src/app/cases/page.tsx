@@ -4,8 +4,8 @@ import { caseStudiesQuery } from "@/lib/queries";
 import CasesClient from "./CasesClient";
 
 export const metadata: Metadata = {
-  title: "Case Studies",
-  description: "Explore my portfolio of custom-built websites and web applications.",
+  title: "案例",
+  description: "看看我做过的一些独立站项目，每个都是定制开发。",
 };
 
 async function getCases() {

@@ -15,14 +15,13 @@ export default function BlogClient({ posts }: { posts: Post[] }) {
           <ScrollAnimator>
             <div className="text-center mb-16">
               <Badge variant="primary" className="mb-4">
-                Blog
+                博客
               </Badge>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Thoughts & Insights
+                建站笔记 & 技术分享
               </h1>
               <p className="text-lg text-text-muted max-w-2xl mx-auto">
-                Articles about web development, design best practices, and
-                lessons learned from real projects.
+                关于独立站搭建、Web开发、设计实践的经验总结和思考。
               </p>
             </div>
           </ScrollAnimator>
@@ -30,7 +29,7 @@ export default function BlogClient({ posts }: { posts: Post[] }) {
           {posts.length === 0 ? (
             <div className="text-center py-20">
               <p className="text-text-muted">
-                No articles yet. Check back soon for new content!
+                还没有文章，敬请期待！
               </p>
             </div>
           ) : (
@@ -59,7 +58,7 @@ export default function BlogClient({ posts }: { posts: Post[] }) {
                         ))}
                         {post.readingTime && (
                           <span className="text-xs text-text-dim">
-                            {post.readingTime} min read
+                            阅读 {post.readingTime} 分钟
                           </span>
                         )}
                       </div>
@@ -72,7 +71,7 @@ export default function BlogClient({ posts }: { posts: Post[] }) {
                       {post.publishedAt && (
                         <p className="text-xs text-text-dim mt-3">
                           {new Date(post.publishedAt).toLocaleDateString(
-                            "en-US",
+                            "zh-CN",
                             {
                               year: "numeric",
                               month: "long",
